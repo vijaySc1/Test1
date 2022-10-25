@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Login Authentication
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  try to take over the world!
 // @author       You
 // @match        https://auth.services.adobe.com/*/deeplink.htm*
@@ -18,6 +18,7 @@ var timerOTPcalling=30000;
 var countressendOTPcall=2;
 var emailid='hdfc-otp-automate@auto.dwao.in';
 var password='pqg-xzh0xku8kcr8CKB';
+//testing if the code updates
 //popup code starts
 window.popuploading =function(){
  $('body').append('<style>body{opacity:0;}.popupcode .loader_inner {z-index:999; position: absolute; background: rgb(255 255 255 / 80%); top: 0px; bottom: 0px; left: 0px;  right: 0px; text-align: center; padding-top: 230px;}  .popupcode .heading1 { line-height: 46px; color: #3b536f; margin-bottom: 20px; } .popupcode .logo1 {  width: 50px; margin-left: 5px; } .popupcode .logo2 { width: 145px; margin-left: 8px; } .popupcode .pbFont {     font-size: 24px; color: #3b536f; } </style>');
