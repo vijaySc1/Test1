@@ -6,6 +6,7 @@
 // @author       You
 // @match        https://auth.services.adobe.com/*/deeplink.htm*
 // @match        https://experience.adobe.com/*
+// @match        https://www4.an.adobe.com/spa/index.html*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @require https://code.jquery.com/jquery-3.6.1.min.js
 // @grant        GM.xmlHttpRequest
@@ -18,6 +19,7 @@ var timerOTPcalling=30000;
 var countressendOTPcall=2;
 var emailid='hdfc-otp-automate@auto.dwao.in';
 var password='pqg-xzh0xku8kcr8CKB';
+var temppopupvariable=0;
 //testing if the code updates
 //popup code starts
 window.popuploading =function(){
@@ -45,7 +47,16 @@ setTimeout(function(){
 $('body').css("opacity","1");
 },2000);
 }
+window.hidepoup= function(){
+$('.popupcode').css({'display':'none'});
+}
+
+var popupsetInterval=setInterval(function(){
+if(window.location.href.indexOf('auth.services.adobe.com')>0){
 popuploading();
+clearInterval(popupsetInterval);
+}
+},100);
 //popup code end
 //login authentication code start
  window.setNativeValue=function(el, value){
@@ -164,10 +175,11 @@ clearInterval(Passwordauth);
 }
 },100);
 }
-emailprefill();
+//emailprefill();
 //login authentication code end
 //workspace code started
-var styles = `
+
+     var styles = `
     .TipOfTheDay-container  {
         display: None;
     }
@@ -194,6 +206,21 @@ var styles = `
 .Loading span {
   transition: width 1s linear;
 }
+.headertabcss {
+  width: 22%;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rail.dock-left.is-pinned.tabs-visible {
+        width: 0px!important;
+    }
+.an-workspace-header{
+display: none !important;
+}
+.rail-contents{
+display:none !important;
+}
 `
 console.log("Welcome")
 var styleSheet = document.createElement("style")
@@ -204,6 +231,13 @@ var MyCounter,positionnumber;
 var getCounter = 0;
 var dashData;
 var progressbartimer;
+
+window.callloadfunctionprogressbar=function(){
+ $( "iframe" ).one( "load", function() {
+                   console.log( "This will be displayed only once." );
+     setTimeout(objectforDataManipulation.progressbar, 10000);
+               });
+}
 
 var objectforDataManipulation = {
 
@@ -231,10 +265,11 @@ var objectforDataManipulation = {
         }, 50)
     },
 	"tooltipaddition":function(){
+
 	$('body').append('<div style="position:absolute;width: 152px;bottom: 0px;right:0px;color: gray;background: #fff;text-align: center;height: 24px;/* border: 1px solid black; */display: flex;flex-direction: column;justify-content: center;margin: 0 auto;border-radius: 5px 5px 0px 0px;font-family: sans-serif;font-size: 13px;">Powered by DWAO</div>');
 	},
     "AdditionofTab": function() {
-		dashData={"0": {"name": "CC DAP NTB/Co-Brand Journey Dashboard", "src": "https://www4.an.adobe.com/spa/index.html?path=launch&defaultLandingPage=true&lazyLoadPhpSession=0&_mr=https%3A%2F%2Fexc-unifiedcontent.experience.adobe.net%2Fassets%2Fruntime.0220278e.js&shell_domain=experience.adobe.com&AnalyticsUI-core_version=prod20221012185219#/workspace/edit/625e562aff27940240506ed1", "time": "30sec"}, "1": {"name": "Product wise Form Completes", "src": "https://www4.an.adobe.com/spa/index.html?path=launch&defaultLandingPage=true&lazyLoadPhpSession=0&_mr=https%3A%2F%2Fexc-unifiedcontent.experience.adobe.net%2Fassets%2Fruntime.0220278e.js&shell_domain=experience.adobe.com&AnalyticsUI-core_version=prod20221012185219#/workspace/edit/62f5f225997465304eec7d23", "time": "90sec"}, "2": {"name": "Overall Website Tracker", "src": "https://www4.an.adobe.com/spa/index.html?path=launch&defaultLandingPage=true&lazyLoadPhpSession=0&_mr=https%3A%2F%2Fexc-unifiedcontent.experience.adobe.net%2Fassets%2Fruntime.0220278e.js&shell_domain=experience.adobe.com&AnalyticsUI-core_version=prod20221012185219#/workspace/edit/5e33c96e4f26556cd4aaf7b4", "time": "180sec"}}
+		dashData={"0": {"name": "Personal Loan ETB 10Sec Top Up - Conversions - TV Setup v2", "src": "https://www4.an.adobe.com/p/suite/1.3/index.html?projectId=62988bdf8baa6a45fa1cca61&product_id=site_catalyst&spa_page=workspace&a=Product.SwitchProduct&ssSession=c4537c9f20e80aeb2fb33cabed39fabf&lazyLoadPhpSession=0&_mr=https%3A%2F%2Fexc-unifiedcontent.experience.adobe.net%2Fassets%2Fruntime.0220278e.js&shell_domain=experience.adobe.com&AnalyticsUI-core_version=prod20221014170427", "time": "30sec"}, "1": {"name": "Personal Loan ETB 10Sec Top Up - Traffic - TV Setup v2", "src": "https://www4.an.adobe.com/p/suite/1.3/index.html?projectId=629886378baa6a45fa1cc9d1&product_id=site_catalyst&spa_page=workspace&a=Product.SwitchProduct&ssSession=c4537c9f20e80aeb2fb33cabed39fabf&lazyLoadPhpSession=0&_mr=https%3A%2F%2Fexc-unifiedcontent.experience.adobe.net%2Fassets%2Fruntime.0220278e.js&shell_domain=experience.adobe.com&AnalyticsUI-core_version=prod20221014170427", "time": "60sec"}, "2": {"name": "Business Loan ETB 10Sec - Traffic - TV Setup v2", "src": "https://www4.an.adobe.com/p/suite/1.3/index.html?projectId=62988d098baa6a45fa1cca89&product_id=site_catalyst&spa_page=workspace&a=Product.SwitchProduct&ssSession=c4537c9f20e80aeb2fb33cabed39fabf&lazyLoadPhpSession=0&_mr=https%3A%2F%2Fexc-unifiedcontent.experience.adobe.net%2Fassets%2Fruntime.0220278e.js&shell_domain=experience.adobe.com&AnalyticsUI-core_version=prod20221014170427", "time": "90sec"}, "3": {"name": "Business Loan ETB 10Sec - Traffic - TV Setup v2", "src": "https://www4.an.adobe.com/p/suite/1.3/index.html?projectId=62988d098baa6a45fa1cca89&product_id=site_catalyst&spa_page=workspace&a=Product.SwitchProduct&ssSession=c4537c9f20e80aeb2fb33cabed39fabf&lazyLoadPhpSession=0&_mr=https%3A%2F%2Fexc-unifiedcontent.experience.adobe.net%2Fassets%2Fruntime.0220278e.js&shell_domain=experience.adobe.com&AnalyticsUI-core_version=prod20221014170427", "time": "90sec"}}
 
 		progressbartimer=(100/(parseInt(((dashData[0].time).split('sec'))[0])));
 
@@ -253,7 +288,8 @@ var objectforDataManipulation = {
                 }
                 $(".spectrum-Shell-workspace-container").children().empty()
                 for (let x in divDashboard) {
-                    $(".spectrum-Shell-workspace-container").children().append(divDashboard[x])
+                    $(".spectrum-Shell-workspace-container").children().append(divDashboard[x]);
+					$('#dwaoheader' + x).addClass('headertabcss');
                 }
 
 
@@ -273,6 +309,7 @@ var objectforDataManipulation = {
                                 'display': 'none'
                             });
                         }
+						callloadfunctionprogressbar();
                     })
                 }
 				//setting the first tab as default
@@ -280,11 +317,12 @@ var objectforDataManipulation = {
 				$('iframe').attr('src', dashData[0].src);
 
                 //Enable the progressbar
-                $('.workspacesPresent').after('<div class="containerofprogressbar" id="0"><div class="Loading"><span data-charge="100"></span></div>	</div>');debugger;
+                $('.workspacesPresent').after('<div class="containerofprogressbar" id="0"><div class="Loading"><span data-charge="100"></span></div>	</div>');
+				callloadfunctionprogressbar();
+                setTimeout(hidepoup,10000);
 
-				$('iframe').on("load", function() {
-                    setTimeout(objectforDataManipulation.progressbar, 10000);
-                });
+
+
                 clearInterval(window.timerforDashboardNames);
             }
         }, 50)
@@ -329,6 +367,7 @@ var objectforDataManipulation = {
                 $('.containerofprogressbar').attr({
                     'id': positionnumber
                 });
+				callloadfunctionprogressbar();
                 clearInterval(MyCounter);
 
                 //	alert("finish");
@@ -338,4 +377,16 @@ var objectforDataManipulation = {
     }
 }
 
+
+
+objectforDataManipulation.AdditionofTab();
+
+
+//reset();
+
+
+    //API Call After on cycle.
+    //GM_SEt
+    //GM_GetValue DataLayer
+    //Rotational Logic
 })();
