@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Login Authentication
 // @namespace    http://tampermonkey.net/
-// @version      0.4
+// @version      0.6
 // @description  try to take over the world!
 // @author       You
 // @match        https://auth.services.adobe.com/*/deeplink.htm*
