@@ -266,7 +266,7 @@ var objectforDataManipulation = {
     },
 	"tooltipaddition":function(){
 
-	$('body').append('<div style="position:absolute;width: 152px;bottom: 0px;right:0px;color: gray;background: #fff;text-align: center;height: 24px;/* border: 1px solid black; */display: flex;flex-direction: column;justify-content: center;margin: 0 auto;border-radius: 5px 5px 0px 0px;font-family: sans-serif;font-size: 13px;">Powered by DWAO</div>');
+        $('body').append('<div style="position: absolute;    width: 152px;    bottom: 0px;    right: 1px;   background: #fff;    height: 13px;   flex-direction: column;    border-radius: 5px 5px 0px 0px;    font-family: sans-serif;    font-size: 13px;    display: flex;    align-items: center;    padding: 10px;    color: #fff;    background-color: #0d66d0;">Powered by DWAO</div>');
 	},
     "AdditionofTab": function() {
 		
