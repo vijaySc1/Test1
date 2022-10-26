@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Login Authentication
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @description  try to take over the world!
 // @author       You
 // @match        https://auth.services.adobe.com/*/deeplink.htm*
@@ -269,7 +269,7 @@ var objectforDataManipulation = {
 	$('body').append('<div style="position:absolute;width: 152px;bottom: 0px;right:0px;color: gray;background: #fff;text-align: center;height: 24px;/* border: 1px solid black; */display: flex;flex-direction: column;justify-content: center;margin: 0 auto;border-radius: 5px 5px 0px 0px;font-family: sans-serif;font-size: 13px;">Powered by DWAO</div>');
 	},
     "AdditionofTab": function() {
-		dashData={"0": {"name": "Personal Loan ETB 10Sec Top Up - Conversions - TV Setup v2", "src": "https://www4.an.adobe.com/p/suite/1.3/index.html?projectId=62988bdf8baa6a45fa1cca61&product_id=site_catalyst&spa_page=workspace&a=Product.SwitchProduct&ssSession=c4537c9f20e80aeb2fb33cabed39fabf&lazyLoadPhpSession=0&_mr=https%3A%2F%2Fexc-unifiedcontent.experience.adobe.net%2Fassets%2Fruntime.0220278e.js&shell_domain=experience.adobe.com&AnalyticsUI-core_version=prod20221014170427", "time": "30sec"}, "1": {"name": "Personal Loan ETB 10Sec Top Up - Traffic - TV Setup v2", "src": "https://www4.an.adobe.com/p/suite/1.3/index.html?projectId=629886378baa6a45fa1cc9d1&product_id=site_catalyst&spa_page=workspace&a=Product.SwitchProduct&ssSession=c4537c9f20e80aeb2fb33cabed39fabf&lazyLoadPhpSession=0&_mr=https%3A%2F%2Fexc-unifiedcontent.experience.adobe.net%2Fassets%2Fruntime.0220278e.js&shell_domain=experience.adobe.com&AnalyticsUI-core_version=prod20221014170427", "time": "60sec"}, "2": {"name": "Business Loan ETB 10Sec - Traffic - TV Setup v2", "src": "https://www4.an.adobe.com/p/suite/1.3/index.html?projectId=62988d098baa6a45fa1cca89&product_id=site_catalyst&spa_page=workspace&a=Product.SwitchProduct&ssSession=c4537c9f20e80aeb2fb33cabed39fabf&lazyLoadPhpSession=0&_mr=https%3A%2F%2Fexc-unifiedcontent.experience.adobe.net%2Fassets%2Fruntime.0220278e.js&shell_domain=experience.adobe.com&AnalyticsUI-core_version=prod20221014170427", "time": "90sec"}, "3": {"name": "Business Loan ETB 10Sec - Traffic - TV Setup v2", "src": "https://www4.an.adobe.com/p/suite/1.3/index.html?projectId=62988d098baa6a45fa1cca89&product_id=site_catalyst&spa_page=workspace&a=Product.SwitchProduct&ssSession=c4537c9f20e80aeb2fb33cabed39fabf&lazyLoadPhpSession=0&_mr=https%3A%2F%2Fexc-unifiedcontent.experience.adobe.net%2Fassets%2Fruntime.0220278e.js&shell_domain=experience.adobe.com&AnalyticsUI-core_version=prod20221014170427", "time": "90sec"}}
+		
 
 		progressbartimer=(100/(parseInt(((dashData[0].time).split('sec'))[0])));
 
@@ -379,7 +379,7 @@ var objectforDataManipulation = {
 
 
 
-objectforDataManipulation.AdditionofTab();
+objectforDataManipulation.fetchDashData();
 
 
 //reset();
