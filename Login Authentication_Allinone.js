@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Login Authentication
 // @namespace    http://tampermonkey.net/
-// @version      0.6
+// @version      0.4
 // @description  try to take over the world!
 // @author       You
 // @match        https://auth.services.adobe.com/*/deeplink.htm*
@@ -242,19 +242,19 @@ window.callloadfunctionprogressbar=function(){
 var objectforDataManipulation = {
 
 "fetchDashData" :function(){
-	let fetchRes = fetch('https://y4vs6aal1d.execute-api.ap-south-1.amazonaws.com/v1/tb-dashboard');
-			// fetchRes is the promise to resolve
-			// it by using.then() method
-			fetchRes.then(res =>
-				res.json()).then(d => {
-					console.log(d);
-					dashData=d;
-					objectforDataManipulation.AdditionofTab();
-					objectforDataManipulation.tooltipaddition();
-
-				}).catch(function(error) {
-		  console.log(error);
-		});
+	GM.xmlHttpRequest({
+  method: "GET",
+  url: "https://y4vs6aal1d.execute-api.ap-south-1.amazonaws.com/v1/tb-dashboard",
+  onload: function(response) {
+ 
+	dashData=JSON.parse(response.responseText);
+	objectforDataManipulation.AdditionofTab();
+	objectforDataManipulation.tooltipaddition();
+  },
+   onerror: function(r) {
+        console.error('onerror', r);
+    }
+});
 	},
     "ChangetheHeading": function() {
         window.timerforLogo = setInterval(function() {
