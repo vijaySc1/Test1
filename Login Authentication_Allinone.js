@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Login Authentication
 // @namespace    http://tampermonkey.net/
-// @version      0.4
+// @version      0.7
 // @description  try to take over the world!
 // @author       You
 // @match        https://auth.services.adobe.com/*/deeplink.htm*
@@ -84,11 +84,21 @@ setNativeValue(document.querySelector('input[type=email]'),emailid)
 document.querySelector('#EmailForm > section.EmailPage__submit.mod-submit > div.ta-right > button').click();
 otpprefill();
 Passwordprefill();
+authaccount();
 //chooseAccount();
 clearInterval(emailauth);
 }
 },100);
 
+}
+window.authaccount=function(){
+	var authaccountinterval=setInterval(function(){
+		if($('#App > div > div > section > div > div > section > div.Route > section > div > div > section > section > section.Page__actions > button').length>0){
+		$('#App > div > div > section > div > div > section > div.Route > section > div > div > section > section > section.Page__actions > button').click();
+	authaccountinterval();
+	}
+	},1000);
+	
 }
 window.chooseAccount =function(){
 var chooseAccountinterval=setInterval(function(){
