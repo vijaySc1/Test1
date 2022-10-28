@@ -376,7 +376,6 @@ window.objectforDataManipulation = {
 
 
 
-objectforDataManipulation.fetchDashData();
 
 
 //reset();
