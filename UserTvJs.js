@@ -376,7 +376,7 @@ var objectforDataManipulation = {
 
 
 
-
+objectforDataManipulation.fetchDashData();
 
 
 //reset();
