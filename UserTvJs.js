@@ -236,7 +236,7 @@ window.callloadfunctionprogressbar=function(){
                });
 }
 
-var objectforDataManipulation = {
+window.objectforDataManipulation = {
 
 "fetchDashData" :function(){
 	GM.xmlHttpRequest({
