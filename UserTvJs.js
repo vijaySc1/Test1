@@ -15,6 +15,13 @@
 // ==/UserScript==
 
 (function() {
+window.temppopupvariable=0;
+window.MyCounter;
+window.positionnumber;
+window.getCounter = 0;
+window.dashData;
+window.progressbartimer;
+
 
 //testing if the code updates
 //popup code starts
