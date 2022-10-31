@@ -1,19 +1,3 @@
-// ==UserScript==
-// @name         Login Authentication
-// @namespace    http://tampermonkey.net/
-// @version      1.0
-// @description  try to take over the world!
-// @author       You
-// @match        https://auth.services.adobe.com/*/deeplink.htm*
-// @match        https://experience.adobe.com/*
-// @match        https://www4.an.adobe.com/spa/index.html*
-// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
-// @require https://code.jquery.com/jquery-3.6.1.min.js
-// @grant        GM.xmlHttpRequest
-// @grant        GM_xmlHttpRequest
-// @grant        GM_addElement
-// ==/UserScript==
-
 (function() {
 window.temppopupvariable=0;
 window.MyCounter;
