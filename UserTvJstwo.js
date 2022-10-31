@@ -204,6 +204,9 @@ clearInterval(Passwordauth);
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.an-workspace-header{
+display: none !important;
+}
 `
 console.log("Welcome")
 var styleSheet = document.createElement("style")
