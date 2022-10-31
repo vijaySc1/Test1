@@ -222,8 +222,8 @@ window.callloadfunctionprogressbar=function(){
 }
 
 window.objectforDataManipulation = {
-console.log("fetch function called");
 "fetchDashData" :function(){
+	console.log("fetch function called");
 	GM.xmlHttpRequest({
   method: "GET",
   url: "https://y4vs6aal1d.execute-api.ap-south-1.amazonaws.com/v1/tb-dashboard",
