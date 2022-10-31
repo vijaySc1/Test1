@@ -222,7 +222,7 @@ window.callloadfunctionprogressbar=function(){
 }
 
 window.objectforDataManipulation = {
-
+consol.log("fetch function called");
 "fetchDashData" :function(){
 	GM.xmlHttpRequest({
   method: "GET",
