@@ -204,15 +204,6 @@ clearInterval(Passwordauth);
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.rail.dock-left.is-pinned.tabs-visible {
-        width: 0px!important;
-    }
-.an-workspace-header{
-display: none !important;
-}
-.rail-contents{
-display:none !important;
-}
 `
 console.log("Welcome")
 var styleSheet = document.createElement("style")
