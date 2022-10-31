@@ -172,7 +172,7 @@ clearInterval(Passwordauth);
 //workspace code started
 
      var styles = `
-    .TipOfTheDay-container  {
+    .TipOfTheDay-header  {
         display: None;
     }
     .spectrum-Shell-rightContainer {
@@ -207,6 +207,7 @@ clearInterval(Passwordauth);
 .an-workspace-header{
 display: none !important;
 }
+
 `
 console.log("Welcome")
 var styleSheet = document.createElement("style")
