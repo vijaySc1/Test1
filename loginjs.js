@@ -1,4 +1,4 @@
-
+(function() {
 //login authentication code start
  window.setNativeValue=function(el, value){
   const previousValue = el.value;
@@ -117,3 +117,5 @@ window.loginauthentication = {
     }
 
 }
+
+})();
